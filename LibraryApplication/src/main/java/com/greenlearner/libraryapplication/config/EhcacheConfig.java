@@ -11,20 +11,18 @@ import org.springframework.core.io.ClassPathResource;
  * @author - GreenLearner(https://www.youtube.com/channel/UCaH2MTg94hrJZTolW01a3ZA)
  */
 
-//@EnableCaching
 @Configuration
-public class EhcahceConfig {
+public class EhcacheConfig {
 
     @Bean
-    CacheManager cacheManager() {
-        return new EhCacheCacheManager(cacheManagerFactory().getObject());
+    CacheManager cacheManager(){
+        return new EhCacheCacheManager(ehCacheManager());
     }
 
-    private EhCacheManagerFactoryBean cacheManagerFactory() {
-        EhCacheManagerFactoryBean bean = new EhCacheManagerFactoryBean();
-        bean.setConfigLocation(new ClassPathResource("ehcache.xml"));
-        bean.setShared(true);
-        System.out.println("ehcache bean");
-        return bean;
+    private net.sf.ehcache.CacheManager ehCacheManager() {
+        EhCacheManagerFactoryBean factoryBean = new EhCacheManagerFactoryBean();
+        factoryBean.setConfigLocation(new ClassPathResource("ehcache.xml"));
+        factoryBean.setShared(true);
+        return factoryBean.getObject();
     }
 }

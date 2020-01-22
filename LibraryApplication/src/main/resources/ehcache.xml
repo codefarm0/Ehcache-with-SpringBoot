@@ -1,18 +1,26 @@
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="ehcache.xsd"
-         updateCheck="false" monitoring="autodetect"
-         dynamicConfig="true">
-    <diskStore path="java.io.tmpdir"/>
-    <cache
-            maxEntriesLocalHeap="10000"
-            eternal="false"
-            timeToIdleSeconds="120"
-            timeToLiveSeconds="120"
-            maxEntriesLocalDisk="10000000"
-            diskExpiryThreadIntervalSeconds="120"
-            memoryStoreEvictionPolicy="LRU"
-            transactionalMode="off">
-        <persistence strategy="localTempSwap"/>
+         updateCheck="true"
+         monitoring="autodetect"
+         dynamicConfig="true"
+         diskPersistent="true">
+
+<!--    <diskStore path="java.io.tmpdir" />-->
+    <diskStore path="user.dir" />
+
+    <cache name="books"
+           maxEntriesLocalHeap="5"
+           maxEntriesLocalDisk="10"
+           eternal="false"
+           diskSpoolBufferSizeMB="20"
+           timeToIdleSeconds="3000"
+           timeToLiveSeconds="6000"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off"
+
+           >
+        <persistence strategy="localTempSwap" />
+<!--        <persistence strategy="LOCALRESTARTABLE" />-->
     </cache>
 
 </ehcache>

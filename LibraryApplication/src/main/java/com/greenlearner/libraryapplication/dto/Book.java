@@ -3,13 +3,17 @@ package com.greenlearner.libraryapplication.dto;
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
+/**c
  * @author - GreenLearner(https://www.youtube.com/channel/UCaH2MTg94hrJZTolW01a3ZA)
  */
 
 @Entity
 @Table(name = "book")
-public class Book {
+public class Book implements Serializable{
+
+
+    private static final long serialVersionUID = 1307525040224585678L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

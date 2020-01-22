@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
-@EnableCaching
+@EnableCaching // to enable the caching
 public class LibraryApplication {
 
     public static void main(String[] args) {

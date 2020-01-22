@@ -16,7 +16,7 @@ public class BookController {
     private BookService bookService;
 
     @PostMapping("/book")
-    public Book addBook(@RequestBody Book book){
+    public Book addBook(@RequestBody Book book) {
         return bookService.addBook(book);
     }
 
@@ -26,11 +26,12 @@ public class BookController {
     }
 
     @GetMapping("/book/{id}")
-    public Book getBook(@PathVariable long id){
+    public Book getBook(@PathVariable long id) {
         return bookService.getBook(id);
     }
+
     @DeleteMapping("/book/{id}")
-    public String deleteBook(@PathVariable long id){
+    public String deleteBook(@PathVariable long id) {
         return bookService.deleteBook(id);
     }
 }

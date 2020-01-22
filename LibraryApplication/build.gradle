@@ -25,6 +25,7 @@ dependencies {
 	//my sql connector
 	compile 'mysql:mysql-connector-java:8.0.17'
 
+	//ehcache
 	compile group: 'net.sf.ehcache', name: 'ehcache', version: '2.10.6'
 
 	//test
