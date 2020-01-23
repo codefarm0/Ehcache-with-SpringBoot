@@ -12,8 +12,8 @@
 
  ## Ehcache integration with spring boot
  
- * Video - 
+ * Video - https://youtu.be/ZBUJaRLjlHM
  
  ## Ehcache integration with spring boot - going deeper
  
- * Video - 
+ * Video - https://youtu.be/dMcr-LZVOFQ
